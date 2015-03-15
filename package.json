@@ -1,14 +1,31 @@
 {
   "name": "APIServer",
   "version": "1.0.0",
-  "description": "",
+  "description": "트렌드 마스터 Api Server입니다",
   "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Trendmaster/iojs-api-server.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "lodash": "^3.5.0",
+    "mongodb": "~2.0",
     "restify": "^3.0.0"
+  },
+  "devDependencies": {
+    "chai": "^2.1.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-uglify": "^0.8.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-mocha": "^0.4.12",
+    "grunt-mocha-test": "^0.12.7",
+    "mocha": "^2.2.1"
   }
 }
