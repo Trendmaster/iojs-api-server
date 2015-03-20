@@ -12,25 +12,12 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
-      files: ['gruntfile.js', 'src/*.js'],
+      files: ['gruntfile.js', 'bin/*', 'lib/*'],
       options: {
         maxlen: 80,
         quotmark: 'single'
       },
-      dev: ['gruntfile.js', 'tests/*.js'],
-      app:  ['src/**/*.js']
-    },
-    concat: {
-      options: {
-        separator: '\n',
-        banner: banner
-      },
-      build: {
-        files: [{
-          src: ['src/*.js'],
-          dest: 'build/<%= pkg.name %>.js'
-        }]
-      }
+      dev: ['gruntfile.js', 'bin/*', 'lib/*']
     },
     uglify: {
       options: {
@@ -48,7 +35,7 @@ module.exports = function(grunt) {
         options: {
           spawn: false
         },
-        files: ['gruntfile.js', 'src/*.js', 'tests/**/*.js'],
+        files: ['gruntfile.js', 'bin/*', 'lib/*'],
         tasks: ['development']
       }
     },
@@ -74,6 +61,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['concat', 'uglify', 'mochaTest']);
-  grunt.registerTask('development', ['mochaTest']);
+  grunt.registerTask('default', ['uglify', 'jshint']);
+  grunt.registerTask('development', ['jslint']);
 };
