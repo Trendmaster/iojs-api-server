@@ -1,0 +1,7 @@
+{
+  "apps" : [{
+    "name"        : "TrendMasterApi",
+    "script"      : "bin/apiStart.js",
+    "watch"       : true
+  }]
+}
