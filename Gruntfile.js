@@ -62,5 +62,5 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', ['uglify', 'jshint']);
-  grunt.registerTask('development', ['jslint']);
+  grunt.registerTask('development', ['jshint']);
 };

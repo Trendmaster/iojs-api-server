@@ -3,24 +3,14 @@
  */
 var restify = require('restify');
 
-function respond(req, res, next) {
-  res.send("Hello");
-  next();
-}
-
-function test(req, res, next) {
-  console.log(req);
-  console.log(res);
-  next();
-}
-
 var server = restify.createServer({
   name: 'MyApp'
 });
 
-server.use(test);
+server.use(function (req, res, next) {
+  next();
+});
 
-server.get('/hello/:name', respond);
-server.head('/hello/:name', respond);
+require('../lib')(server);
 
 module.exports = server;
